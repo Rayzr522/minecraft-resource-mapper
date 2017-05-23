@@ -1,0 +1,14 @@
+{
+  "name": "minecraft-resource-mapper",
+  "description": "Maps all Minecraft resources from their hashed names back to the original file structure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Rayzr522/minecraft-resource-mapper",
+  "bin": {
+    "mc-rm": "bin/minecraft-resource-mapper.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^3.0.1"
+  }
+}
