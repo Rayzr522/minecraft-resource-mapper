@@ -29,9 +29,6 @@ function mkdirp(folder) {
 
 const buffer = Buffer.allocUnsafe(64 * 1024);
 function copy(src, dest) {
-    log(src);
-    log(dest);
-
     if (!fs.existsSync(path.dirname(dest))) {
         mkdirp(path.dirname(dest));
     }
@@ -73,7 +70,7 @@ function mapResources(indexPath, objectsPath) {
 
     let index;
     try {
-        index = require(indexPath);
+        index = require(path.isAbsolute(indexPath) ? indexPath : path.resolve('.', indexPath));
     } catch (err) {
         throw 'Failed to load index file:\n' + err;
     }
@@ -83,6 +80,8 @@ function mapResources(indexPath, objectsPath) {
     }
 
     const objects = index.objects;
+
+    log('Beginning file mapping...');
 
     Object.keys(objects).forEach(key => {
         const fileName = objects[key].hash;
@@ -100,6 +99,8 @@ function mapResources(indexPath, objectsPath) {
 
         copy(oldPath, newPath);
     });
+
+    log('File mapping completed.');
 }
 
 module.exports = mapResources;
