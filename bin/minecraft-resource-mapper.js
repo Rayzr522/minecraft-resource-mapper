@@ -1,9 +1,14 @@
 #!/usr/bin/env /usr/local/bin/node
 
+function usage() {
+    console.log('Usage: minecraft-resource-mapper <index file> <objects folder>');
+    process.exit(1);
+}
+
 (function main(args) {
     if (args.length < 2) {
         usage();
-        throw 'You must provide an index file and an objects folder.';
+        process.exit(1);
     }
 
     const indexPath = args[0];

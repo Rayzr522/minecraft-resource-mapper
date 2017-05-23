@@ -9,11 +9,6 @@ log.error = function (message) {
     log('[ERROR] ' + message);
 }
 
-function usage() {
-    log('Usage: minecraft-resource-mapper <index file> <objects folder>');
-    process.exit(1);
-}
-
 function exists(file) {
     return fs.existsSync(file);
 }
