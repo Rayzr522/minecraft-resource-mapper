@@ -1,7 +1,7 @@
 {
   "name": "minecraft-resource-mapper",
   "description": "Maps all Minecraft resources from their hashed names back to the original file structure",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "https://github.com/Rayzr522/minecraft-resource-mapper",
   "bin": {
